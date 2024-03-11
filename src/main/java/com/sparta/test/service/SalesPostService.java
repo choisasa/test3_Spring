@@ -27,7 +27,7 @@ public class SalesPostService {
         return new SalesPostResponseDto(entity.getId(), entity.getTitle(), entity.getPrice(), entity.getUsername(), entity.getContent());
     }
 
-    // 판매 게시글 상세 조회
+    // Id 조회
     public SalesPostResponseDto getPostById(Long id) {
         Optional<SalesPost> optionalPost = salesPostRepository.findById(id);
         if (optionalPost.isPresent()) {
@@ -38,7 +38,7 @@ public class SalesPostService {
         }
     }
 
-    // 판매 게시글 전체 조회
+    // 전체 조회
     public List<SalesPostResponseDto> getAllPosts() {
         List<SalesPost> entities = salesPostRepository.findAll();
         List<SalesPostResponseDto> dtos = new ArrayList<>();
